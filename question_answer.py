@@ -100,7 +100,7 @@ def generate_response(question: str, qa_pair : str,config_id : str) -> str:
   """
   
   response_rag = with_message_history_rag.invoke(
-    {"messages": [HumanMessage(content=f"""Write an answer for the asked question: \n {question}.Here is an example of a question and respective multiple answers answered by humans: \n {qa_pair}""")]
+    {"messages": [HumanMessage(content=f"""Write only one answer for the asked question: \n {question}.Here is an example of a question and respective multiple answers answered by humans: \n {qa_pair}""")]
      },
      config={"configurable": {"session_id": config_id}}
     )
